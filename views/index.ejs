@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRC Random Team Generator</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <h1>FRC Random Team Generator</h1>
+        <div class="team-info">
+            <p>Team Number: <%= teamNumber %></p>
+            <% if (teamInfo !== null && teamInfo.nickname !== undefined) { %>
+                <p>Team Name: <%= teamInfo.nickname %></p>
+                <p>Location: <%= teamInfo.city %>, <%= teamInfo.state_prov %>, <%= teamInfo.country %></p>
+            <% } else { %>
+                <p>Team information not available</p>
+            <% } %>
+        </div>
+        <a href="/">Generate Random Team</a>
+    </div>
+</body>
+</html>

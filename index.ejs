@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random FRC Team</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .team-info {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 0 auto;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random FRC Team</h1>
+    <div class="team-info">
+        <h2>Team Information</h2>
+        <p><strong>Team Number:</strong> <%= team_number %></p>
+        <p><strong>Name:</strong> <%= name %></p>
+        <p><strong>Location:</strong> <%= location %></p>
+    </div>
+    <br>
+    <button onclick="generateRandomTeam()">Generate Random Team</button>
+
+    <script>
+        async function generateRandomTeam() {
+            try {
+                const response = await fetch('/');
+                const data = await response.json();
+                document.querySelector('.team-info').innerHTML = `
+                    <h2>Team Information</h2>
+                    <p><strong>Team Number:</strong> ${data.team_number}</p>
+                    <p><strong>Name:</strong> ${data.name}</p>
+                    <p><strong>Location:</strong> ${data.location}</p>
+                `;
+            } catch (error) {
+                console.error('Error fetching random team:', error);
+            }
+        }
+    </script>
+</body>
+</html>

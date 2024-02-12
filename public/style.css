@@ -1,0 +1,36 @@
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-attachment: cover;
+    background: linear-gradient(#00ccff, #000000);
+    background-repeat: no-repeat;
+
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.team-info {
+    
+
+    margin-bottom: 20px;
+}
+
+a {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+a:hover {
+    background-color: #0056b3;
+}
