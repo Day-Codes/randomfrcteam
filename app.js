@@ -1,6 +1,7 @@
 const express = require('express');
 const axios = require('axios');
 const app = express();
+require('dotenv').config();
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
@@ -14,7 +15,7 @@ const fetchTeamInfo = async (teamNumber) => {
     try {
         const response = await axios.get(`https://www.thebluealliance.com/api/v3/team/frc${teamNumber}`, {
             headers: {
-                'X-TBA-Auth-Key': '5yL00zjwnh2wt9O7MBHZmnBC767QEFKY10LGCJS8EVnbKsAUoUYOKha7dDBALadC' // Replace YOUR_TBA_API_KEY with your actual TBA API key
+                'X-TBA-Auth-Key': process.env.TBA // Replace YOUR_TBA_API_KEY with your actual TBA API key
             }
         });
         return response.data;
