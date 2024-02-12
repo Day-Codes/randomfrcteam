@@ -1,8 +1,9 @@
 const express = require('express');
 const axios = require('axios');
+const morgan = require('morgan');
 const app = express();
 require('dotenv').config();
-
+app.use(morgan('dev'));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
